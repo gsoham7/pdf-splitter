@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            background-color: #aecaf2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: slideInUp 0.5s ease-in-out;
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        h2, p {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>File uploaded successfully</h2>
+        <p>File Name: {{ name }}</p>
+        <p>Do you want to extract pages from {{ start }} to {{ end }}?</p>
+        <form method="post" action="/convert">
+            <button type="submit">Extract Pages</button>
+        </form>
+    </div>
+</body>
+</html>
+
